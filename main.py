@@ -1,4 +1,5 @@
 from flask import Flask, url_for, render_template, request
+import os
 app = Flask(__name__)
 
 print("https://flask.palletsprojects.com/en/2.2.x/quickstart/#a-minimal-application")
@@ -30,7 +31,7 @@ def login():
     return render_template('login.html', error=error)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=os.getenv("PORT", default=5000))`
     
 """   
 
