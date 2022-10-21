@@ -8,7 +8,7 @@ def check(psw):
     if psw==os.environ['psw']:
         return True
 @app.route("/")
-def hello_world(name='Uh idk you didn\t mention it', psw):
+def hello_world(psw, name='Uh idk you didn\t mention it'):
     if check(psw):
         #return f"<p>Hello, {name}!</p>"
         return render_template('test.html', name=name)
