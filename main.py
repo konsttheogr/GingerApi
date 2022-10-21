@@ -4,9 +4,9 @@ app = Flask(__name__)
 
 print("https://flask.palletsprojects.com/en/2.2.x/quickstart/#a-minimal-application")
 @app.route("/")
-def hello_world(name='noname'):
-    return f"<p>Hello, {name}!</p>"
-    #render_template('hello.html', name=name)
+def hello_world(name='Uh idk you didn\t mention it'):
+    #return f"<p>Hello, {name}!</p>"
+    render_template('test.html', name=name)
     
 """<!doctype html>
 <title>Hello from Flask</title>
@@ -16,7 +16,7 @@ def hello_world(name='noname'):
   <h1>Hello, World!</h1>
 {% endif %}"""
     
-
+"""
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     error = None
@@ -30,10 +30,8 @@ def login():
     # was GET or the credentials were invalid
     return render_template('login.html', error=error)
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=os.getenv("PORT", default=5000))
-    
-"""   
+
+     
 
 @app.route('/')
 def index():
@@ -49,3 +47,6 @@ def index():
     return resp
     
 """
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=os.getenv("PORT", default=5000))
