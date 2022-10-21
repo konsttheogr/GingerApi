@@ -3,10 +3,17 @@ import os
 app = Flask(__name__)
 
 print("https://flask.palletsprojects.com/en/2.2.x/quickstart/#a-minimal-application")
+
+def check(psw):
+    if psw==os.environ['psw']:
+        return True
 @app.route("/")
-def hello_world(name='Uh idk you didn\t mention it'):
-    #return f"<p>Hello, {name}!</p>"
-    render_template('test.html', name=name)
+def hello_world(name='Uh idk you didn\t mention it', psw):
+    if check(psw):
+        #return f"<p>Hello, {name}!</p>"
+        return render_template('test.html', name=name)
+    else:
+        return 403
     
 """<!doctype html>
 <title>Hello from Flask</title>
