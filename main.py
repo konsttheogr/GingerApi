@@ -1,4 +1,5 @@
 from flask import Flask, url_for, render_template, request
+from requests_html import HTML
 import os
 app = Flask(__name__)
 
@@ -11,7 +12,14 @@ def hello_world(name='Uh idk you didn\t mention it'):
     return render_template('test.html', name=name)
     
     
-"""<!doctype html>
+"""
+with open('templates/test.html') as f:
+    source = f.read()
+    html = HTML(html=source)
+    print(f"{html.text} \n\n\n\n\n {html.html} \n\n\n\n Title: {html.find('title')[0].text}")
+    
+
+<!doctype html>
 <title>Hello from Flask</title>
 {% if name %}
   <h1>Hello {{ name }}!</h1>
