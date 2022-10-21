@@ -7,7 +7,7 @@ print("https://flask.palletsprojects.com/en/2.2.x/quickstart/#a-minimal-applicat
 def check(psw):
     if psw==os.environ['psw']:
         return True
-@app.route("/{psw}/")
+@app.route("/<psw>/")
 def hello_world(name='Uh idk you didn\t mention it'):
     if check(psw):
         #return f"<p>Hello, {name}!</p>"
