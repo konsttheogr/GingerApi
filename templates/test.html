@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Api</title>
-    </head>
-    <body>
-        <h1>Testing</h1>
-        <p>Your name: {{ name }}</p>
-    </body>
-    
-</html>
+<h1>Testing</h1>
+        {% if name %}
+        <p>Hey {{ name }}</p>
+        {% else %}
+        <h1>Hello, World!</h1>
+        {% endif %}
