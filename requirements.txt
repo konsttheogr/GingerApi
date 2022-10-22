@@ -1,1 +1,3 @@
 flask
+sys
+PyQt4
