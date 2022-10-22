@@ -14,9 +14,9 @@ def hello(name):
 def check():
     return '200'
  
-@app.route(f"/{psw}/template/<template>")
-def teplate(template, name=''):
-    return render_template(template, name=name)
+@app.route(f"/{psw}/template/<template>/<arg>")
+def teplate(template, **args):
+    return render_template(template, arg1=args['img'])
 
 """
 with open('templates/test.html') as f:
