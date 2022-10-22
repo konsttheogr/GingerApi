@@ -16,7 +16,7 @@ def check():
  
 @app.route(f"/{psw}/template/<template>")
 def teplate(template, a=None, b=None, c=None, d=None):
-    print(args)
+    print([a,b,c,d])
     return render_template(template, arg1=a)
 
 """
