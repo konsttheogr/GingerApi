@@ -15,7 +15,7 @@ def check():
     return '200'
  
 @app.route(f"/{psw}/template/<template>")
-def teplate(name='0'):
+def teplate(template, name=''):
     return render_template(template, name=name)
 
 """
