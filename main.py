@@ -7,7 +7,7 @@ print("https://flask.palletsprojects.com/en/2.2.x/quickstart/#a-minimal-applicat
 
 psw = os.environ['psw']
 @app.route(f"/{psw}/hello/<name>")
-def hello_world(name):
+def hello(name):
     return f"<p>Hello, {name}!</p>"
     #return render_template('test.html', name=name)
     
