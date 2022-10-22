@@ -16,7 +16,7 @@ def check():
  
 @app.route(f"/{psw}/template/<template>")
 def teplate(name='0'):
-    return render_template(template', name=name)
+    return render_template(template, name=name)
 
 """
 with open('templates/test.html') as f:
