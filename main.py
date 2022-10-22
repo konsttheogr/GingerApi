@@ -9,12 +9,15 @@ psw = os.environ['psw']
 @app.route(f"/{psw}/hello/<name>")
 def hello(name):
     return f"<p>Hello, {name}!</p>"
-    #return render_template('test.html', name=name)
     
 @app.route(f"/{psw}/check")
 def check():
     return '200'
-    
+ 
+@app.route(f"/{psw}/template/<template>")
+def teplate(name='0'):
+    return render_template(template', name=name)
+
 """
 with open('templates/test.html') as f:
     source = f.read()
