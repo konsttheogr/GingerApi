@@ -134,44 +134,10 @@
 		Ts:[117,"Tennessine","ÔåíÝóéï"],
 		Og:[118,"Oganesson","ÏãêáíÝóóéï"]
 		}
+		elm = location.href.hash
+		document.getElementById(elm).style.opacity = '0.6'
 		
-		function loadEl() {
-			var cls = document.getElementById(elm).className
-			var cls = cls.split(' ')[1]
-			document.getElementById(last).style.opacity = '0.6'
-			els = elements[elm]
-		}
-		function showPeriods(elm) {
-			var elm = document.getElementById(elm)
-			var cls = elm.className
-			var elms = ''
-			var elmNs = ''
-			var elmIDs = ''
-			cls = cls.split(' ')
-			cls = cls[1]
-			console.log(cls)
-			document.getElementById('outpES').innerHTML = ''
-			document.getElementById('outpEN').innerHTML = ''
-			document.getElementById('outpEI').innerHTML = ''
-			for (var i in elements) {
-				if (document.getElementById(i).className.split(' ')[1]==cls) {
-					elms += ' ' + i
-					elmNs += ' ' + elements[i][1]
-					elmIDs += ' ' + elements[i][0]
-				}
-			}
-			document.getElementById('outpES').innerHTML = elms
-			document.getElementById('outpEN').innerHTML = elmNs
-			document.getElementById('outpEI').innerHTML = elmIDs
-		}
-		function search(n) {	
-			var n = n.toLowerCase()
-			n = n[0].toUpperCase() + n.substring(1)
-			for (var i in elements) {
-				if (n in elements) {func(n)}
-				else {document.getElementById('searchtab').value = ''}
-			}
-		}
+	
 	</script>
 	<body>
 		<div id="tbl" class="tbl">
