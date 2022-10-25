@@ -1,13 +1,5 @@
 <html>
-	<head>
-		<title>KonstTheoGR - Periodic Table</title>
-		<script type="text/javascript" src="http://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=1HKSOBv5-mFrF1odLeXcDKLXUQHDehGT9pY61zSXubLN9bmKRr_KNHba-DH6msxYS2eGyN6Gozb4LG-juEgXVg" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="http://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cDovL2tvbnN0dGhlb2dyLnRrL3BlcmlvZGljLXRhYmxlLw"/><script src="/cdn-cgi/apps/head/F0M8x9lJCN0WMQ6BBulKRYMFnvA.js"></script><link rel="icon" href="https://konsttheogr.tk/favicon.ico">
-	</head>
 	<style>
-		.sidenav {display: none; height: 100%; width: 200px; position: fixed; z-index: 1; top: 0; left: 0; background-color: #111; overflow-x: hidden; padding-top: 20px;}
-		.sidenav a, .dropdown-btn {padding: 6px 8px 6px 16px; text-decoration: none; font-size: 20px; display: block; border: none; background: none; width:100%; text-align: left; cursor: pointer; outline: none;}
-		.sidenav a:hover, .dropdown-btn:hover {color: #f1f1f1;}
-		.triline {font-size: x-large; border: 0px; background-color: transparent; cursor: pointer;}
 		.bt {width:50px; height:40px; font-size: large}
 		.none {background-color: transparent; border: 0px}
 		.nonmetal {background-color: #c6b210}
@@ -142,32 +134,12 @@
 		Ts:[117,"Tennessine","ÔåíÝóéï"],
 		Og:[118,"Oganesson","ÏãêáíÝóóéï"]
 		}
-		var periods = {
-		'nonmetal': 'Non metals / ÁìÝôáëëá',
-		'alkali-metal': 'Alkali metals / ÁëêÜëéá',
-		'alkaline-earth-metal': 'Alkaline earth metal / ÁëêáëéêÝò ãáßåò',
-		'transition-metal': 'Transition metals / Óôïé÷åßá ìåôÜðôùóçò',
-		'post-transition-metal': "Post transition metals / 'Áëëá ìÝôáëëá",
-		'metalloid': 'Metalloids / ÌåôáëëïåéäÞ',
-		'halogen': 'Halogens / Áëïãüíá',
-		'noble-gas': 'Noble gases / ÅõãåíÞ áÝñéá',
-		'lanthanide': 'Lanthanides / Ëáíèáíßäåò',
-		'actinide': 'Actinides / Áêôéíßäåò'
-		}
-		var last = 'H'
-		function func(elm) {
+		
+		function loadEl() {
 			var cls = document.getElementById(elm).className
 			var cls = cls.split(' ')[1]
-			document.getElementById(last).style.opacity = '1'
-			last = elm
 			document.getElementById(last).style.opacity = '0.6'
 			els = elements[elm]
-			
-			document.getElementById('outpES').innerHTML = elm 
-			document.getElementById('outpEN').innerHTML = els[1] + ' / ' + els[2]
-			document.getElementById('outpEI').innerHTML = els[0]
-			document.getElementById('outpCG').innerHTML = periods[cls]
-			console.log(elm)
 		}
 		function showPeriods(elm) {
 			var elm = document.getElementById(elm)
@@ -202,19 +174,10 @@
 		}
 	</script>
 	<body>
-		<div class="sidenav" id="sidenav">
-			<a style="font-size: x-large; color: #ffffff" onclick="sidenav.style.display = 'none'">&#8801</a>
-			<a href="https://konsttheogr.tk/comments/index.html">Comments</a>
-  			<a href="https://konsttheogr.tk/calculator/index.html">Calculator</a>
-  			<a href="https://konsttheogr.tk/music-player/index.html">Music player</a>
-			<a href="https://konsttheogr.tk/periodic-table/index.html">Periodic Table</a>
-		</div> 
-		<input class="triline" value="&#8801" type="button" onclick="sidenav.style.display = 'block'"><a href="https://konsttheogr.tk/index.html"><img width="300" height="50" src="https://konsttheogr.tk/home-button.png"></a>
-		<center><h1>Periodic table</h1></center>
 		<div id="tbl" class="tbl">
 			<table>
 				<tr>
-					<th><input id="H" onclick="func('H')" value="H" style="opacity: 0.6" class="bt nonmetal" type="button">
+					<th><input id="H" onclick="func('H')" value="H" class="bt nonmetal" type="button">
 					<th><input id="" value="" class="bt none" type="button">
 					<th><input id="" value="" class="bt none" type="button">
 					<th><input id="" value="" class="bt none" type="button">
@@ -395,12 +358,5 @@
 				</tr>
 			</table>
 		</div>
-		<p id="info" class="info">
-		<input id="searchtab" type="text" placeholder="Search an element"><input type="button" value="search" onclick="search(document.getElementById('searchtab').value)"><br>
-		Element symbol: <b><a id="outpES">H</a></b><br>
-		Element name: <b><a id="outpEN">Hydrogen / Õäñïãüíï</a></b><br>
-		Element id: <b><a id="outpEI">1</a></b><br>
-		Chemical Group: <b><a onclick="showPeriods(document.getElementById('outpES').innerHTML)" id="outpCG">Non metals / ÁìÝôáëëá</a></b></p>
-	<script src="https://www.drv.tw/inc/wd.js?s=s76rpwniaqt8aa9mfu6t7q"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"75fc15e39f86b770","version":"2022.10.3","r":1,"token":"d2f3029d23b64e38816a23126b2e3164","si":100}' crossorigin="anonymous"></script>
 </body>
 </html>
