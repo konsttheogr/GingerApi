@@ -1,0 +1,406 @@
+<html>
+	<head>
+		<title>KonstTheoGR - Periodic Table</title>
+		<script type="text/javascript" src="http://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=1HKSOBv5-mFrF1odLeXcDKLXUQHDehGT9pY61zSXubLN9bmKRr_KNHba-DH6msxYS2eGyN6Gozb4LG-juEgXVg" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="http://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cDovL2tvbnN0dGhlb2dyLnRrL3BlcmlvZGljLXRhYmxlLw"/><script src="/cdn-cgi/apps/head/F0M8x9lJCN0WMQ6BBulKRYMFnvA.js"></script><link rel="icon" href="https://konsttheogr.tk/favicon.ico">
+	</head>
+	<style>
+		.sidenav {display: none; height: 100%; width: 200px; position: fixed; z-index: 1; top: 0; left: 0; background-color: #111; overflow-x: hidden; padding-top: 20px;}
+		.sidenav a, .dropdown-btn {padding: 6px 8px 6px 16px; text-decoration: none; font-size: 20px; display: block; border: none; background: none; width:100%; text-align: left; cursor: pointer; outline: none;}
+		.sidenav a:hover, .dropdown-btn:hover {color: #f1f1f1;}
+		.triline {font-size: x-large; border: 0px; background-color: transparent; cursor: pointer;}
+		.bt {width:50px; height:40px; font-size: large}
+		.none {background-color: transparent; border: 0px}
+		.nonmetal {background-color: #c6b210}
+		.alkali-metal {background-color: #c61010}
+		.alkaline-earth-metal {background-color: #7c10c6}
+		.transition-metal {background-color: #1068c6}
+		.post-transition-metal {background-color: #10c657}
+		.metalloid {background-color: #776727}
+		.halogen {background-color: #bf9d16}
+		.noble-gas {background-color: #b54114}
+		.lanthanide {background-color: #139f9f}
+		.actinide {background-color: #1ceaea}
+	</style>
+	<script>
+		var elements = {
+		H:[1,"Hydrogen","Õäñïãüíï"],
+		He:[2,"Helium","'Çëéï"],
+		Li:[3,"Lithium","Ëßèéï"],
+		Be:[4,"Beryllium","Âçñýëëéï"],
+		B:[5,"Boron","Âüñéï"],
+		C:[6,"Carbon","¢íèñáêáò"],
+		N:[7,"Nitrogen","¢æùôï"],
+		O:[8,"Oxygen","Ïîõãüíï"],
+		F:[9,"Fluorine","Öèüñéï"],
+		Ne:[10,"Neon","ÍÝïí"],
+		Na:[11,"Sodium","ÍÜôñéï"],
+		Mg:[12,"Magnesium","ÌáãíÞóéï"],
+		Al:[13,"Aluminium","Áñãßëéï"],
+		Si:[14,"Silicon","Ðõñßôéï"],
+		P:[15,"Phosporus","Öþóöïñïò"],
+		S:[16,"Sulfur","Èåßï"],
+		Cl:[17,"Chlorine","×ëþñéï"],
+		Ar:[18,"Argon","Áñãü"],
+		K:[19,"Potassium","ÊÜëéï"],
+		Ca:[20,"Calcium","ÁóâÝóôéï"],
+		Sc:[21,"Scandium","ÓêÜíäéï"],
+		Ti:[22,"Titanium","ÔéôÜíéï"],
+		V:[23,"Vanadium","ÂáíÜäéï"],
+		Cr:[24,"Chromium","×ñþìéï"],
+		Mn:[25,"Manganese","ÌáããÜíéï"],
+		Fe:[26,"Iron","Óßäçñïò"],
+		Co:[27,"Cobalt","ÊïâÜëôéï"],
+		Ni:[28,"Nickel","ÍéêÝëéï"],
+		Cu:[29,"Copper","×áëêüò"],
+		Zn:[30,"Zinc","ØåõäÜñãõñïò"],
+		Ga:[31,"Gallium","ÃÜëëéï"],
+		Ge:[32,"Germanium","ÃåñìÜíéï"],
+		As:[33,"Arsenic","Áñóåíéêü"],
+		Se:[34,"Selenium","ÓåëÞíéï"],
+		Br:[35,"Bromine","Âñþìéï"],
+		Kr:[36,"Krypton","Êñõðôü"],
+		Rb:[37,"Rubidium","Ñïõâßäéï"],
+		Sr:[38,"Strontium","Óôñüíôéï"],
+		Y:[39,"Yttrium","¾ôñéï"],
+		Zr:[40,"Zirconium","Æéñêüíéï"],
+		Nb:[41,"Niobium","Íéüâéï"],
+		Mo:[42,"Molybdenum","Ìïëýâäéï"],
+		Tc:[43,"Technetium","Ôå÷íçôü"],
+		Ru:[44,"Ruthenium","ÑïõèÞíéï"],
+		Rh:[45,"Rhodium","Ñüäéï"],
+		Pd:[46,"Palladium","ÐáëëÜäéï"],
+		Ag:[47,"Silver","¢ñãõñïò"],
+		Cd:[48,"Cadmium","ÊÜäìéï"],
+		In:[49,"Indium","ºíäéï"],
+		Sn:[50,"Tin","Êáóóßôåñïò"],
+		Sb:[51,"Antimony","Áíôéìüíéï"],
+		Te:[52,"Tellurium","Ôåëëïýñéï"],
+		I:[53,"Iodine","Éþäéï"],
+		Xe:[54,"Xenon","ÎÝíéï"],
+		Cs:[55,"Cesium","Êáßóéï"],
+		Ba:[56,"Barium","ÂÜñéï"],
+		La:[57,"Lanthanum","ËáíèÜíéï"],
+		Ce:[58,"Cerium","ÄçìÞôñéï"],
+		Pr:[59,"Praseodymium","Ðñáóéíïäïýìéï"],
+		Nd:[60,"Neodymium","Íåïäýìéï"],
+		Pm:[61,"Promethium","ÐñïìÞèåéï"],
+		Sm:[62,"Samarium","ÓáìÜñéï"],
+		Eu:[63,"Europium","Åõñþðéï"],
+		Gd:[64,"Gadolinum","Ãáäïëßíéï"],
+		Tb:[65,"Terbium","ÔÝñâéï"],
+		Dy:[66,"Dysprosium","Äõóðñüóéï"],
+		Ho:[67,"Holmium","¼ëìéï"],
+		Er:[68,"Erbium","¸ñâéï"],
+		Tm:[69,"Thulium","Èïýâéï"],
+		Yb:[70,"Ytterbium","ÕôôÝñâéï"],
+		Lu:[71,"Lutetium","ËïõôÞôéï"],
+		Hf:[72,"Hafnium","¢öíéï"],
+		Ta:[73,"Tantalum","ÔáíôÜëéï"],
+		W:[74,"Tungsten","ÂïëöñÜìéï"],
+		Re:[75,"Rhenium","ÑÞíéï"],
+		Os:[76,"Osmium","¼óìéï"],
+		Ir:[77,"Iridium","Éñßäéï"],
+		Pt:[78,"Platinum","Ëåõêü÷ñõóïò"],
+		Au:[79,"Gold","×ñõóüò"],
+		Hg:[80,"Mercury","ÕäñÜñãõñïò"],
+		Tl:[81,"Thallium","ÈÜëëéï"],
+		Pb:[82,"Lead","Ìüëõâäïò"],
+		Bi:[83,"Bismuth","Âéóèïýìéï"],
+		Po:[84,"Polonium","Ðïëþíéï"],
+		At:[85,"Astatine","¢óôáôï"],
+		Rn:[86,"Radon","Ñáäüíéï"],
+		Fr:[87,"Francium","ÖñÜíêéï"],
+		Ra:[88,"Radium","ÑÜäéï"],
+		Ac:[89,"Actinium","Áêôßíéï"],
+		Th:[90,"Thorium","Èüñéï"],
+		Pa:[91,"Protactinium","Ðñùôáêôßíéï"],
+		U:[92,"Uranium","ÏõñÜíéï"],
+		Np:[93,"Neptunium","Ðïóåéäþíéï"],
+		Pu:[94,"Plutonium","Ðëïõôþíéï"],
+		Am:[95,"Americium","Áìåñßêéï"],
+		Cm:[96,"Curium","Êéïýñéï"],
+		Bk:[97,"Berkelium","ÌðåñêÝëéï"],
+		Cf:[98,"Californium","Êáëéöüñíéï"],
+		Es:[99,"Einsteinium","Áúíóôáúíéï"],
+		Fm:[100,"Fermium","ÖÝñìéï"],
+		Md:[101,"Mendelevium","ÌåíôåëÝâéï"],
+		No:[102,"Nobelium","ÍïìðÝëéï"],
+		Lr:[103,"Lawrencium","ËùñÝíóéï"],
+		Rf:[104,"Rutherfordium","Ñáäåñöüñíôéï"],
+		Db:[105,"Dubnium","Íôïýìðéï"],
+		Sg:[106,"Seaborgium","Óéìðüñãêéï"],
+		Bh:[107,"Bohrium","Ìðüñéï"],
+		Hs:[108,"Hassium","×Üóéï"],
+		Mt:[109,"Meitnerium","ÌáúôíÝñéï"],
+		Ds:[110,"Darmstadtium","ÍôáñìóôÜíéï"],
+		Rg:[111,"Roentgenium","ÑåíôãêÝíéï"],
+		Cn:[112,"Copernicium","Êïðåñíßêéï"],
+		Nh:[113,"Flerovium","Íé÷üíéï"],
+		Fl:[114,"Flerovio","Öëåñüâéï"],
+		Mc:[115,"Moscovium","Ìïóêüâéï"],
+		Lv:[116,"Livermorium","Ëéâåñìüñéï"],
+		Ts:[117,"Tennessine","ÔåíÝóéï"],
+		Og:[118,"Oganesson","ÏãêáíÝóóéï"]
+		}
+		var periods = {
+		'nonmetal': 'Non metals / ÁìÝôáëëá',
+		'alkali-metal': 'Alkali metals / ÁëêÜëéá',
+		'alkaline-earth-metal': 'Alkaline earth metal / ÁëêáëéêÝò ãáßåò',
+		'transition-metal': 'Transition metals / Óôïé÷åßá ìåôÜðôùóçò',
+		'post-transition-metal': "Post transition metals / 'Áëëá ìÝôáëëá",
+		'metalloid': 'Metalloids / ÌåôáëëïåéäÞ',
+		'halogen': 'Halogens / Áëïãüíá',
+		'noble-gas': 'Noble gases / ÅõãåíÞ áÝñéá',
+		'lanthanide': 'Lanthanides / Ëáíèáíßäåò',
+		'actinide': 'Actinides / Áêôéíßäåò'
+		}
+		var last = 'H'
+		function func(elm) {
+			var cls = document.getElementById(elm).className
+			var cls = cls.split(' ')[1]
+			document.getElementById(last).style.opacity = '1'
+			last = elm
+			document.getElementById(last).style.opacity = '0.6'
+			els = elements[elm]
+			
+			document.getElementById('outpES').innerHTML = elm 
+			document.getElementById('outpEN').innerHTML = els[1] + ' / ' + els[2]
+			document.getElementById('outpEI').innerHTML = els[0]
+			document.getElementById('outpCG').innerHTML = periods[cls]
+			console.log(elm)
+		}
+		function showPeriods(elm) {
+			var elm = document.getElementById(elm)
+			var cls = elm.className
+			var elms = ''
+			var elmNs = ''
+			var elmIDs = ''
+			cls = cls.split(' ')
+			cls = cls[1]
+			console.log(cls)
+			document.getElementById('outpES').innerHTML = ''
+			document.getElementById('outpEN').innerHTML = ''
+			document.getElementById('outpEI').innerHTML = ''
+			for (var i in elements) {
+				if (document.getElementById(i).className.split(' ')[1]==cls) {
+					elms += ' ' + i
+					elmNs += ' ' + elements[i][1]
+					elmIDs += ' ' + elements[i][0]
+				}
+			}
+			document.getElementById('outpES').innerHTML = elms
+			document.getElementById('outpEN').innerHTML = elmNs
+			document.getElementById('outpEI').innerHTML = elmIDs
+		}
+		function search(n) {	
+			var n = n.toLowerCase()
+			n = n[0].toUpperCase() + n.substring(1)
+			for (var i in elements) {
+				if (n in elements) {func(n)}
+				else {document.getElementById('searchtab').value = ''}
+			}
+		}
+	</script>
+	<body>
+		<div class="sidenav" id="sidenav">
+			<a style="font-size: x-large; color: #ffffff" onclick="sidenav.style.display = 'none'">&#8801</a>
+			<a href="https://konsttheogr.tk/comments/index.html">Comments</a>
+  			<a href="https://konsttheogr.tk/calculator/index.html">Calculator</a>
+  			<a href="https://konsttheogr.tk/music-player/index.html">Music player</a>
+			<a href="https://konsttheogr.tk/periodic-table/index.html">Periodic Table</a>
+		</div> 
+		<input class="triline" value="&#8801" type="button" onclick="sidenav.style.display = 'block'"><a href="https://konsttheogr.tk/index.html"><img width="300" height="50" src="https://konsttheogr.tk/home-button.png"></a>
+		<center><h1>Periodic table</h1></center>
+		<div id="tbl" class="tbl">
+			<table>
+				<tr>
+					<th><input id="H" onclick="func('H')" value="H" style="opacity: 0.6" class="bt nonmetal" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id=""value="" class="bt none" type="button">
+					<th><input id="He" onclick="func('He')" value="He" class="bt noble-gas" type="button">
+				</tr>
+				<tr>
+					<th><input id="Li" onclick="func('Li')" value="Li" class="bt alkali-metal" type="button">
+					<th><input id="Be" onclick="func('Be')" value="Be" class="bt alkaline-earth-metal" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="B" onclick="func('B')" value="B" class="bt metalloid" type="button">
+					<th><input id="C" onclick="func('C')" value="C" class="bt nonmetal" type="button">
+					<th><input id="N" onclick="func('N')" value="N" class="bt nonmetal" type="button">
+					<th><input id="O" onclick="func('O')" value="O" class="bt nonmetal" type="button">
+					<th><input id="F" onclick="func('F')" value="F" class="bt halogen" type="button">
+					<th><input id="Ne" onclick="func('Ne')" value="Ne" class="bt noble-gas" type="button">
+				</tr>
+				<tr>
+					<th><input id="Na" onclick="func('Na')" value="Na" class="bt alkali-metal" type="button">
+					<th><input id="Mg" onclick="func('Mg')" value="Mg" class="bt alkaline-earth-metal" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="Al" onclick="func('Al')" value="Al" class="bt post-transition-metal" type="button">
+					<th><input id="Si" onclick="func('Si')" value="Si" class="bt metalloid" type="button">
+					<th><input id="P" onclick="func('P')" value="P" class="bt nonmetal" type="button">
+					<th><input id="S" onclick="func('S')" value="S" class="bt nonmetal" type="button">
+					<th><input id="Cl" onclick="func('Cl')" value="Cl" class="bt halogen" type="button">
+					<th><input id="Ar" onclick="func('Ar')" value="Ar" class="bt noble-gas" type="button">
+				</tr>
+				<tr>
+					<th><input id="K" onclick="func('K')" value="K" class="bt alkali-metal" type="button">
+					<th><input id="Ca" onclick="func('Ca')" value="Ca" class="bt alkaline-earth-metal" type="button">
+					<th><input id="Sc" onclick="func('Sc')" value="Sc" class="bt transition-metal" type="button">
+					<th><input id="Ti" onclick="func('Ti')" value="Ti" class="bt transition-metal" type="button">
+					<th><input id="V" onclick="func('V')" value="V" class="bt transition-metal" type="button">
+					<th><input id="Cr" onclick="func('Cr')" value="Cr" class="bt transition-metal" type="button">
+					<th><input id="Mn" onclick="func('Mn')" value="Mn" class="bt transition-metal" type="button">
+					<th><input id="Fe" onclick="func('Fe')" value="Fe" class="bt transition-metal" type="button">
+					<th><input id="Co" onclick="func('Co')" value="Co" class="bt transition-metal" type="button">
+					<th><input id="Ni" onclick="func('Ni')" value="Ni" class="bt transition-metal" type="button">
+					<th><input id="Cu" onclick="func('Cu')" value="Cu" class="bt transition-metal" type="button">
+					<th><input id="Zn" onclick="func('Zn')" value="Zn" class="bt transition-metal" type="button">
+					<th><input id="Ga" onclick="func('Ga')" value="Ga" class="bt post-transition-metal" type="button">
+					<th><input id="Ge" onclick="func('Ge')" value="Ge" class="bt metalloid" type="button">
+					<th><input id="As" onclick="func('As')" value="As" class="bt metalloid" type="button">
+					<th><input id="Se" onclick="func('Se')" value="Se" class="bt nonmetal" type="button">
+					<th><input id="Br" onclick="func('Br')" value="Br" class="bt halogen" type="button">
+					<th><input id="Kr" onclick="func('Kr')" value="Kr" class="bt noble-gas" type="button">
+				</tr>
+				<tr>
+					<th><input id="Rb" onclick="func('Rb')" value="Rb" class="bt alkali-metal" type="button">
+					<th><input id="Sr" onclick="func('Sr')" value="Sr" class="bt alkaline-earth-metal" type="button">
+					<th><input id="Y" onclick="func('Y')" value="Y" class="bt transition-metal" type="button">
+					<th><input id="Zr" onclick="func('Zr')" value="Zr" class="bt transition-metal" type="button">
+					<th><input id="Nb" onclick="func('Nb')" value="Nb" class="bt transition-metal" type="button">
+					<th><input id="Mo" onclick="func('Mo')" value="Mo" class="bt transition-metal" type="button">
+					<th><input id="Tc" onclick="func('Tc')" value="Tc" class="bt transition-metal" type="button">
+					<th><input id="Ru" onclick="func('Ru')" value="Ru" class="bt transition-metal" type="button">
+					<th><input id="Rh" onclick="func('Rh')" value="Rh" class="bt transition-metal" type="button">
+					<th><input id="Pd" onclick="func('Pd')" value="Pd" class="bt transition-metal" type="button">
+					<th><input id="Ag" onclick="func('Ag')" value="Ag" class="bt transition-metal" type="button">
+					<th><input id="Cd" onclick="func('Cd')" value="Cd" class="bt transition-metal" type="button">
+					<th><input id="In" onclick="func('In')" value="In" class="bt post-transition-metal" type="button">
+					<th><input id="Sn" onclick="func('Sn')" value="Sn" class="bt post-transition-metal" type="button">
+					<th><input id="Sb" onclick="func('Sb')" value="Sb" class="bt metalloid" type="button">
+					<th><input id="Te" onclick="func('Te')" value="Te" class="bt metalloid" type="button">
+					<th><input id="I" onclick="func('I')" value="I" class="bt halogen" type="button">
+					<th><input id="Xe" onclick="func('Xe')" value="Xe" class="bt noble-gas" type="button">
+				</tr>
+				<tr>
+					<th><input id="Cs" onclick="func('Cs')" value="Cs" class="bt alkali-metal" type="button">
+					<th><input id="Ba" onclick="func('Ba')" value="Ba" class="bt alkaline-earth-metal" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="Hf" onclick="func('Hf')" value="Hf" class="bt transition-metal" type="button">
+					<th><input id="Ta" onclick="func('Ta')" value="Ta" class="bt transition-metal" type="button">
+					<th><input id="W" onclick="func('W')" value="W" class="bt transition-metal" type="button">
+					<th><input id="Re" onclick="func('Re')" value="Re" class="bt transition-metal" type="button">
+					<th><input id="Os" onclick="func('Os')" value="Os" class="bt transition-metal" type="button">
+					<th><input id="Ir" onclick="func('Ir')" value="Ir" class="bt transition-metal" type="button">
+					<th><input id="Pt" onclick="func('Pt')" value="Pt" class="bt transition-metal" type="button">
+					<th><input id="Au" onclick="func('Au')" value="Au" class="bt transition-metal" type="button">
+					<th><input id="Hg" onclick="func('Hg')" value="Hg" class="bt transition-metal" type="button">
+					<th><input id="Tl" onclick="func('Tl')" value="Tl" class="bt post-transition-metal" type="button">
+					<th><input id="Pb" onclick="func('Pb')" value="Pb" class="bt post-transition-metal" type="button">
+					<th><input id="Bi" onclick="func('Bi')" value="Bi" class="bt post-transition-metal" type="button">
+					<th><input id="Po" onclick="func('Po')" value="Po" class="bt metalloid" type="button">
+					<th><input id="At" onclick="func('At')" value="At" class="bt halogen" type="button">
+					<th><input id="Rn" onclick="func('Rn')" value="Rn" class="bt noble-gas" type="button">
+				</tr>
+				<tr>
+					<th><input id="Fr" onclick="func('Fr')" value="Fr" class="bt alkali-metal" type="button">
+					<th><input id="Ra" onclick="func('Ra')" value="Ra" class="bt alkaline-earth-metal" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="Rf" onclick="func('Rf')" value="Rf" class="bt transition-metal" type="button">
+					<th><input id="Db" onclick="func('Db')" value="Db" class="bt transition-metal" type="button">
+					<th><input id="Sg" onclick="func('Sg')" value="Sg" class="bt transition-metal" type="button">
+					<th><input id="Bh" onclick="func('Bh')" value="Bh" class="bt transition-metal" type="button">
+					<th><input id="Hs" onclick="func('Hs')" value="Hs" class="bt transition-metal" type="button">
+					<th><input id="Mt" onclick="func('Mt')" value="Mt" class="bt transition-metal" type="button">
+					<th><input id="Ds" onclick="func('Ds')" value="Ds" class="bt transition-metal" type="button">
+					<th><input id="Rg" onclick="func('Rg')" value="Rg" class="bt transition-metal" type="button">
+					<th><input id="Cn" onclick="func('Cn')" value="Cn" class="bt transition-metal" type="button">
+					<th><input id="Nh" onclick="func('Nh')" value="Nh" class="bt post-transition-metal" type="button">
+					<th><input id="Fl" onclick="func('Fl')" value="Fl" class="bt post-transition-metal" type="button">
+					<th><input id="Mc" onclick="func('Mc')" value="Mc" class="bt post-transition-metal" type="button">
+					<th><input id="Lv" onclick="func('Lv')" value="Lv" class="bt post-transition-metal" type="button">
+					<th><input id="Ts" onclick="func('Ts')" value="Ts" class="bt halogen" type="button">
+					<th><input id="Og" onclick="func('Og')" value="Og" class="bt noble-gas" type="button">
+				</tr>
+				<tr>
+				<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="La" onclick="func('La')" value="La" class="bt lanthanide" type="button">
+					<th><input id="Ce" onclick="func('Ce')" value="Ce" class="bt lanthanide" type="button">
+					<th><input id="Pr" onclick="func('Pr')" value="Pr" class="bt lanthanide" type="button">
+					<th><input id="Nd" onclick="func('Nd')" value="Nd" class="bt lanthanide" type="button">
+					<th><input id="Pm" onclick="func('Pm')" value="Pm" class="bt lanthanide" type="button">
+					<th><input id="Sm" onclick="func('Sm')" value="Sm" class="bt lanthanide" type="button">
+					<th><input id="Eu" onclick="func('Eu')" value="Eu" class="bt lanthanide" type="button">
+					<th><input id="Gd" onclick="func('Gd')" value="Gd" class="bt lanthanide" type="button">
+					<th><input id="Tb" onclick="func('Tb')" value="Tb" class="bt lanthanide" type="button">
+					<th><input id="Dy" onclick="func('Dy')" value="Dy" class="bt lanthanide" type="button">
+					<th><input id="Ho" onclick="func('Ho')" value="Ho" class="bt lanthanide" type="button">
+					<th><input id="Er" onclick="func('Er')" value="Er" class="bt lanthanide" type="button">
+					<th><input id="Tm" onclick="func('Tm')" value="Tm" class="bt lanthanide" type="button">
+					<th><input id="Yb" onclick="func('Yb')" value="Yb" class="bt lanthanide" type="button">
+					<th><input id="Lu" onclick="func('Lu')" value="Lu" class="bt lanthanide" type="button">
+				</tr>
+				<tr>
+					<th><input id="" value="" class="bt none none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="" value="" class="bt none" type="button">
+					<th><input id="Ac" onclick="func('Ac')" value="Ac" class="bt actinide" type="button">
+					<th><input id="Th" onclick="func('Th')" value="Th" class="bt actinide" type="button">
+					<th><input id="Pa" onclick="func('Pa')" value="Pa" class="bt actinide" type="button">
+					<th><input id="U" onclick="func('U')" value="U" class="bt actinide" type="button">
+					<th><input id="Np" onclick="func('Np')" value="Np" class="bt actinide" type="button">
+					<th><input id="Pu" onclick="func('Pu')" value="Pu" class="bt actinide" type="button">
+					<th><input id="Am" onclick="func('Am')" value="Am" class="bt actinide" type="button">
+					<th><input id="Cm" onclick="func('Cm')" value="Cm" class="bt actinide" type="button">
+					<th><input id="Bk" onclick="func('Bk')" value="Bk" class="bt actinide" type="button">
+					<th><input id="Cf" onclick="func('Cf')" value="Cf" class="bt actinide" type="button">
+					<th><input id="Es" onclick="func('Es')" value="Es" class="bt actinide" type="button">
+					<th><input id="Fm" onclick="func('Fm')" value="Fm" class="bt actinide" type="button">
+					<th><input id="Md" onclick="func('Md')" value="Md" class="bt actinide" type="button">
+					<th><input id="No" onclick="func('No')" value="No" class="bt actinide" type="button">
+					<th><input id="Lr" onclick="func('Lr')" value="Lr" class="bt actinide" type="button">
+				</tr>
+			</table>
+		</div>
+		<p id="info" class="info">
+		<input id="searchtab" type="text" placeholder="Search an element"><input type="button" value="search" onclick="search(document.getElementById('searchtab').value)"><br>
+		Element symbol: <b><a id="outpES">H</a></b><br>
+		Element name: <b><a id="outpEN">Hydrogen / Õäñïãüíï</a></b><br>
+		Element id: <b><a id="outpEI">1</a></b><br>
+		Chemical Group: <b><a onclick="showPeriods(document.getElementById('outpES').innerHTML)" id="outpCG">Non metals / ÁìÝôáëëá</a></b></p>
+	<script src="https://www.drv.tw/inc/wd.js?s=s76rpwniaqt8aa9mfu6t7q"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"75fc15e39f86b770","version":"2022.10.3","r":1,"token":"d2f3029d23b64e38816a23126b2e3164","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
